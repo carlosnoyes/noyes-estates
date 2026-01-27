@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirty Towels Reminder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            max-width: 650px;
+            width: 100%;
+            padding: 60px 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 25px;
+        }
+        
+        .message {
+            background: #f8f9fa;
+            padding: 35px 30px;
+            border-left: 4px solid #5a9bb5;
+            border-radius: 4px;
+            margin: 30px 0;
+        }
+        
+        .message-main {
+            color: #2c5f7c;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        
+        .message-sub {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🧺</div>
+        
+        <div class="message">
+            <p class="message-main">Dirty towels go here</p>
+            <p class="message-sub">Please wash them regularly</p>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-text">Thank you! 💙</p>
+        </div>
+    </div>
+</body>
+</html>

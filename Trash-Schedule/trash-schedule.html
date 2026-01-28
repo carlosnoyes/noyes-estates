@@ -355,6 +355,9 @@
 
     <script>
       const container = document.querySelector(".container");
+      const yearInput = document.getElementById("scheduleYear");
+      const currentYear = new Date().getFullYear();
+      yearInput.value = currentYear;
 
       const formatDateShort = (date) => {
         const m = date.getMonth() + 1;
@@ -479,11 +482,6 @@
           return;
         }
 
-        const yearInput = document.getElementById("scheduleYear");
-        const currentYear = new Date().getFullYear();
-        if (!yearInput.value) {
-          yearInput.value = currentYear;
-        }
         const year = parseInt(yearInput.value, 10) || currentYear;
 
         const output = document.getElementById("schedule-output");

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Bathroom Guidelines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 8.5in;
+            height: 11in;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            max-width: 650px;
+            width: 100%;
+            padding: 50px 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #2c5f7c;
+        }
+        
+        h1 {
+            color: #2c5f7c;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        .guidelines {
+            margin: 30px 0;
+        }
+        
+        .section-title {
+            color: #2c5f7c;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "✓";
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #2c5f7c;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+        
+        .guideline-item {
+            background: #f8f9fa;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            border-left: 4px solid #5a9bb5;
+            border-radius: 4px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .guideline-item:hover {
+            transform: translateX(3px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .guideline-item strong {
+            color: #2c5f7c;
+            font-weight: 600;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 18px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .important-note strong {
+            color: #d39e00;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .footer-text {
+            color: #2c5f7c;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .footer-subtext {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        @media print {
+            @page {
+                size: 8.5in 11in;
+                margin: 0;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🚿</div>
+            <h1>Shared Bathroom Guidelines</h1>
+            <p class="subtitle">Renters share responsibility to keep the bathroom clean.</p>
+        </div>
+        
+        <div class="guidelines">
+
+            <div class="guideline-item">
+                <strong>Wipe the sink and toilet</strong> after each use to leave them clean.
+            </div>
+            
+            <div class="guideline-item">
+                <strong>Wipe up any spills</strong> on the floor around the toilet.
+            </div>
+            
+            <div class="guideline-item">
+                <strong>Leave the floor dry</strong> after your shower.
+            </div>
+            
+            <div class="guideline-item">
+                Put <strong>nothing in the toilet</strong> other than toilet paper — not even "flushable" wipes.
+            </div>
+        </div>
+        
+        <div class="important-note">
+            <strong>⚠️ Report clogs or leaks promptly to management.</strong>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-text">Let's keep things clean and functioning for everyone!</p>
+            <p class="footer-subtext">Thanks for doing your part 💙</p>
+        </div>
+    </div>
+</body>
+</html>

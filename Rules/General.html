@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rules & Expectations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 8.5in;
+            height: 11in;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #ffffff;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            height: 100%;
+            padding: 45px;
+            position: relative;
+        }
+
+        .border-frame {
+            border: 3px solid #c41e3a;
+            padding: 40px;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #c41e3a;
+        }
+
+        .corner-decoration.top-left { top: -3px; left: -3px; border-right: none; border-bottom: none; }
+        .corner-decoration.top-right { top: -3px; right: -3px; border-left: none; border-bottom: none; }
+        .corner-decoration.bottom-left { bottom: -3px; left: -3px; border-right: none; border-top: none; }
+        .corner-decoration.bottom-right { bottom: -3px; right: -3px; border-left: none; border-top: none; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .header-icon {
+            font-size: 40px;
+            margin: 12px 0;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 18px 0;
+        }
+
+        .divider-line {
+            height: 2px;
+            width: 60px;
+            background: #c41e3a;
+        }
+
+        .divider-diamond {
+            width: 10px;
+            height: 10px;
+            background: #c41e3a;
+            transform: rotate(45deg);
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .rules-section {
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 30px;
+        }
+
+        .rules-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #c41e3a;
+            margin: 18px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            background: #c41e3a;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .rule-item {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #333;
+            padding: 4px 0 4px 32px;
+            position: relative;
+        }
+
+        .rule-item::before {
+            content: "•";
+            position: absolute;
+            left: 18px;
+            color: #c41e3a;
+        }
+
+        .rule-item strong {
+            color: #c41e3a;
+            font-weight: 600;
+        }
+
+        .sub-rule {
+            font-size: 11px;
+            line-height: 1.4;
+            color: #555;
+            padding: 2px 0 2px 48px;
+            position: relative;
+        }
+
+        .sub-rule::before {
+            content: "–";
+            position: absolute;
+            left: 36px;
+            color: #999;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer-content {
+            text-align: right;
+        }
+
+        .footer-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .footer-subtext {
+            font-size: 12px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        .footer-heart {
+            color: #c41e3a;
+        }
+
+        @media print {
+            @page {
+                size: 8.5in 11in;
+                margin: 0;
+            }
+
+            body {
+                background: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border-frame">
+            <div class="corner-decoration top-left"></div>
+            <div class="corner-decoration top-right"></div>
+            <div class="corner-decoration bottom-left"></div>
+            <div class="corner-decoration bottom-right"></div>
+
+            <div class="header">
+                <h1>House Rules & Expectations</h1>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-diamond"></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="subtitle">These rules exist to keep the home clean, respectful, and comfortable for everyone.<br>By living here, all tenants are expected to follow them.</p>
+            </div>
+
+            <div class="rules-section">
+                <div class="rules-column">
+                    <div class="section-title">
+                        <span class="section-number">1</span>
+                        Guests
+                    </div>
+                    <p class="rule-item">No <strong>overnight guests</strong> without written permission.</p>
+                    <p class="rule-item">No more than <strong>one guest</strong> at a time without approval.</p>
+
+                    <div class="section-title">
+                        <span class="section-number">2</span>
+                        Cleanliness & Shared Spaces
+                    </div>
+                    <p class="rule-item"><strong>Clean up after yourself</strong> immediately in all common areas.</p>
+                    <p class="rule-item">Kitchen and bathrooms must be left <strong>clean after each use</strong>.</p>
+
+                    <div class="section-title">
+                        <span class="section-number">3</span>
+                        Noise, Courtesy & Conduct
+                    </div>
+                    <p class="rule-item">Be <strong>respectful</strong> and keep noise to a reasonable level.</p>
+                    <p class="rule-item">Courtesy and <strong>respectful language</strong> toward housemates and management is required.</p>
+
+                    <div class="section-title">
+                        <span class="section-number">4</span>
+                        Smoking & Substances
+                    </div>
+                    <p class="rule-item"><strong>No smoking</strong> of any kind inside the house.</p>
+                    <p class="rule-item">Smoking outside only; dispose of cigarette butts properly.</p>
+
+                </div>
+
+                <div class="rules-column">
+                    <div class="section-title">
+                        <span class="section-number">5</span>
+                        Pets
+                    </div>
+                    <p class="rule-item"><strong>No pets or animals</strong> without written permission.</p>
+
+                    <div class="section-title">
+                        <span class="section-number">6</span>
+                        Property Care & Maintenance
+                    </div>
+                    <p class="rule-item">Keep your room and shared spaces <strong>clean and undamaged</strong>.</p>
+                    <p class="rule-item"><strong>Report</strong> maintenance or safety issues promptly.</p>
+
+                    <div class="section-title">
+                        <span class="section-number">7</span>
+                        Utilities & Energy Use
+                    </div>
+                    <p class="rule-item"><strong>Conserve utilities</strong> (turn off lights, close windows during heating/cooling).</p>
+
+                    <div class="section-title">
+                        <span class="section-number">8</span>
+                        Keys & Security
+                    </div>
+                    <p class="rule-item">You are responsible for your <strong>room key</strong>.</p>
+                    <p class="rule-item"><strong>$50 fee</strong> for lost or replacement keys.</p>
+
+                    <div class="section-title">
+                        <span class="section-number">9</span>
+                        Personal Belongings
+                    </div>
+                    <p class="rule-item">Keep personal items in your room unless approved.</p>
+                    <p class="rule-item">Landlord is <strong>not responsible</strong> for lost or stolen items.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-content">
+                    <p class="footer-text">Thank You for Your Cooperation</p>
+                    <p class="footer-subtext">We appreciate your respect for these guidelines <span class="footer-heart">♥</span></p>
+                </div>
+                <img src="../Logos/Logo_1.png" alt="Noyes Estates" class="footer-logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

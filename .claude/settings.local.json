@@ -10,7 +10,9 @@
       "Bash(dir \"C:\\\\Users\\\\carlo\\\\AppData\\\\Roaming\\\\Python\\\\Python314\\\\site-packages\\\\cairo\\\\*.dll\")",
       "Bash(python -c \"import ctypes.util; print\\(ctypes.util.find_library\\(''cairo''\\)\\)\")",
       "Bash(python -c \"import cairo._cairo as c; print\\(c.__file__\\)\")",
-      "Bash(python -c \"from PIL import Image; img = Image.open\\(r''c:\\\\Users\\\\carlo\\\\GithubProjects\\\\noyes-estates\\\\logos\\\\Icon_1b.png''\\); print\\(f''Size: {img.size}, Mode: {img.mode}''\\)\")"
+      "Bash(python -c \"from PIL import Image; img = Image.open\\(r''c:\\\\Users\\\\carlo\\\\GithubProjects\\\\noyes-estates\\\\logos\\\\Icon_1b.png''\\); print\\(f''Size: {img.size}, Mode: {img.mode}''\\)\")",
+      "Bash(dir:*)",
+      "Bash(winget:*)"
     ]
   }
 }

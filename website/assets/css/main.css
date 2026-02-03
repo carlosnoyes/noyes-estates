@@ -15,6 +15,10 @@ body {
   color: var(--ink);
   background: var(--bg);
   line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -29,7 +33,7 @@ a:hover { text-decoration: underline; }
 .site-footer {
   border-top: 1px solid var(--line);
   border-bottom: 0;
-  margin-top: 3rem;
+  margin-top: auto;
 }
 
 .wrap {
@@ -52,6 +56,8 @@ a:hover { text-decoration: underline; }
 }
 
 .logo { height: 40px; width: auto; }
+
+.logo-footer { height: 40px; width: auto; display: block; }
 
 .btn {
   display: inline-block;
@@ -113,7 +119,10 @@ a:hover { text-decoration: underline; }
 
 .meta { color: var(--muted); font-size: 0.95rem; }
 
-.page-main { padding: 2rem 0; }
+.page-main {
+  padding: 2rem 0;
+  flex: 1 0 auto;
+}
 
 .property-hero {
   background: var(--surface);
@@ -127,6 +136,74 @@ a:hover { text-decoration: underline; }
   max-height: 500px;
   object-fit: cover;
   display: block;
+}
+
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #101010;
+  cursor: zoom-in;
+}
+
+.property-hero--split {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.1fr) minmax(280px, 0.9fr);
+  align-items: stretch;
+}
+
+.property-hero--split .hero-slideshow {
+  order: 1;
+  height: 100%;
+  min-height: 100%;
+  max-height: none;
+  aspect-ratio: auto;
+  border-right: 1px solid var(--line);
+}
+
+.property-hero--split .property-content {
+  order: 2;
+}
+
+.property-hero--split {
+  min-height: clamp(520px, 74svh, 860px);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.property-hero--split .hero-slide {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-slideshow-hint {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background: rgba(20, 20, 20, 0.65);
+  color: #fff;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
 }
 
 .property-content { padding: 1rem 1.25rem 1.5rem; }
@@ -160,6 +237,86 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   border-radius: 0.5rem;
   background: #fff;
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.9);
+  display: none;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.lightbox.is-open {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.75rem;
+}
+
+.lightbox-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lightbox-close {
+  border: 1px solid #ffffff55;
+  background: transparent;
+  color: #fff;
+  border-radius: 0.35rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.lightbox-stage {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lightbox-nav {
+  border: 1px solid #ffffff55;
+  background: transparent;
+  color: #fff;
+  border-radius: 0.35rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.lightbox-image-wrap {
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  min-height: min(72vh, 680px);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: min(72vh, 680px);
+  object-fit: contain;
+  cursor: default;
+}
+
+.lightbox-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 0.4rem;
+}
+
+.lightbox-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.lightbox-thumb.is-active {
+  border-color: #fff;
 }
 
 .content-panel {
@@ -178,6 +335,16 @@ a:hover { text-decoration: underline; }
   .hero { grid-template-columns: 1fr; }
   .properties-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .property-hero--split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .property-hero--split .hero-slideshow {
+    height: clamp(280px, 48svh, 460px);
+    min-height: 0;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+  }
 }
 
 @media (max-width: 620px) {

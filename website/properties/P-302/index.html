@@ -10,7 +10,7 @@
 <body>
   <header class="site-header">
     <div class="wrap nav">
-      <a href="../../" aria-label="Noyes Estates home"><img class="logo" src="../../assets/images/branding/logo.png" alt="Noyes Estates"></a>
+      <a href="../../" aria-label="Noyes Estates home"><img class="logo" src="../../assets/images/branding/Logo_2-Black.png" alt="Noyes Estates"></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="../../">Home</a>
         <a href="../../about/">About</a>
@@ -20,31 +20,71 @@
   </header>
 
   <main class="wrap page-main" data-property-code="P-302">
-    <article class="property-hero">
-      <img src="../../assets/images/properties/P-302.jpg" alt="302 Spring Street">
-      <div class="property-content">
-        <h1>302 Spring Street</h1>
-        <p class="meta">302 Spring Street</p>
-        <p class="meta">Petersburg, VA</p>
-        <div class="property-stats">
-          <span class="stat">Furnished rooms</span>
-          <span class="stat">Shared spaces</span>
-          <span class="stat">Utilities included</span>
-          <span class="stat">Flexible terms</span>
-        </div>
-        <p>Furnished room rentals in Petersburg with a straightforward move-in process and all-in pricing.</p>
-        <p><a class="btn" href="https://docs.google.com/forms/d/1T1hsxkwL1hNUT5SBK4NxnTL1-3sbWGJCgsHV3xQZcDU" target="_blank" rel="noopener noreferrer">Start Rental Application</a></p>
+        <article class="property-hero property-hero--split">
+      <div class="hero-slideshow" data-hero-slideshow tabindex="0" aria-label="302 Spring Street photo slideshow">
+        <span class="hero-slideshow-hint">Click to open gallery</span>
       </div>
+      <div class="property-content">
+              <h1>302 Spring Street</h1>
+              <p class="meta">302 Spring Street</p>
+              <p class="meta">Petersburg, VA</p>
+              <div class="property-stats">
+                <span class="stat">2 homes on 1 lot</span>
+                <span class="stat">7 bedrooms total</span>
+                <span class="stat">2 baths total</span>
+                <span class="stat">$550-$750 per room</span>
+                <span class="stat">Utilities included</span>
+              </div>
+              <p>Enjoy an affordable room in a fully furnished house. Rooms include core furnishings, and the property includes on-site parking, laundry, high-speed internet, a full kitchen, and comfortable shared living spaces.</p>
+              <p>This home is on Spring Street in Petersburg with convenient access to I-95 and I-85, and an easy drive to Fort Gregg-Adams and Richmond.</p>
+              <p><a class="btn" href="https://docs.google.com/forms/d/1T1hsxkwL1hNUT5SBK4NxnTL1-3sbWGJCgsHV3xQZcDU" target="_blank" rel="noopener noreferrer">Start Rental Application</a></p>
+            </div>
     </article>
+</main>
 
-    
-  </main>
+  <div hidden id="property-image-data">
+    <img data-property-image src="../../assets/images/properties/P-302/g01.jpg" alt="302 Spring Street photo 1">
+    <img data-property-image src="../../assets/images/properties/P-302/g02.jpg" alt="302 Spring Street photo 2">
+    <img data-property-image src="../../assets/images/properties/P-302/g03.jpg" alt="302 Spring Street photo 3">
+    <img data-property-image src="../../assets/images/properties/P-302/g04.jpg" alt="302 Spring Street photo 4">
+    <img data-property-image src="../../assets/images/properties/P-302/g05.jpg" alt="302 Spring Street photo 5">
+    <img data-property-image src="../../assets/images/properties/P-302/g06.jpg" alt="302 Spring Street photo 6">
+    <img data-property-image src="../../assets/images/properties/P-302/g07.jpg" alt="302 Spring Street photo 7">
+    <img data-property-image src="../../assets/images/properties/P-302/g08.jpg" alt="302 Spring Street photo 8">
+    <img data-property-image src="../../assets/images/properties/P-302/g09.jpg" alt="302 Spring Street photo 9">
+    <img data-property-image src="../../assets/images/properties/P-302/g10.jpg" alt="302 Spring Street photo 10">
+    <img data-property-image src="../../assets/images/properties/P-302/g11.jpg" alt="302 Spring Street photo 11">
+    <img data-property-image src="../../assets/images/properties/P-302/g12.jpg" alt="302 Spring Street photo 12">
+    <img data-property-image src="../../assets/images/properties/P-302/g13.jpg" alt="302 Spring Street photo 13">
+    <img data-property-image src="../../assets/images/properties/P-302/g14.jpg" alt="302 Spring Street photo 14">
+    <img data-property-image src="../../assets/images/properties/P-302/g15.jpg" alt="302 Spring Street photo 15">
+    <img data-property-image src="../../assets/images/properties/P-302/g16.jpg" alt="302 Spring Street photo 16">
+    <img data-property-image src="../../assets/images/properties/P-302/g17.jpg" alt="302 Spring Street photo 17">
+  </div>
+
+  <div class="lightbox" id="property-lightbox" aria-hidden="true">
+    <div class="lightbox-toolbar">
+      <button class="lightbox-close" type="button" data-lightbox-close>Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="lightbox-nav" type="button" aria-label="Previous image" data-lightbox-prev>&larr;</button>
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" src="" alt="" data-lightbox-image>
+      </div>
+      <button class="lightbox-nav" type="button" aria-label="Next image" data-lightbox-next>&rarr;</button>
+    </div>
+    <div class="lightbox-thumbs" data-lightbox-thumbs></div>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap nav">
-      <p>Noyes Estates</p>
+      <p><img class="logo logo-footer" src="../../assets/images/branding/Logo_2-Black.png" alt="Noyes Estates"></p>
       <p><a href="mailto:NoyesEstates@gmail.com">NoyesEstates@gmail.com</a></p>
     </div>
   </footer>
+  <script src="../../assets/js/property-gallery.js" defer></script>
 </body>
 </html>
+
+
+

@@ -249,6 +249,32 @@ a:hover { text-decoration: underline; }
   border-radius: 999px;
 }
 
+.hero-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  border: 1px solid #ffffff88;
+  background: rgba(12, 12, 12, 0.6);
+  color: #fff;
+  border-radius: 999px;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.hero-gallery-nav--prev {
+  left: 0.75rem;
+}
+
+.hero-gallery-nav--next {
+  right: 0.75rem;
+}
+
+.hero-gallery-nav:hover {
+  background: rgba(12, 12, 12, 0.78);
+}
+
 .property-intro-overlay {
   position: absolute;
   left: 0.75rem;

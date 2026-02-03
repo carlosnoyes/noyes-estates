@@ -1,6 +1,7 @@
 (() => {
   const slideshowEl = document.querySelector("[data-hero-slideshow]");
   const pageMain = document.querySelector("[data-property-code]");
+  const propertyContent = document.querySelector(".property-content");
   const propertyCode = pageMain?.getAttribute("data-property-code");
   const lightbox = document.getElementById("property-lightbox");
 
@@ -71,10 +72,13 @@
     if (images.length === 0) return;
 
     const introOverlay = slideshowEl.querySelector(".property-intro-overlay");
-    if (introOverlay && !document.querySelector(".property-intro-overlay--mobile")) {
-      const mobileOverlay = introOverlay.cloneNode(true);
-      mobileOverlay.classList.add("property-intro-overlay--mobile");
-      slideshowEl.insertAdjacentElement("afterend", mobileOverlay);
+    if (introOverlay && propertyContent && !propertyContent.querySelector(".property-intro-inline")) {
+      const inlineIntro = document.createElement("div");
+      inlineIntro.className = "property-intro-inline";
+      Array.from(introOverlay.querySelectorAll("p")).forEach((p) => {
+        inlineIntro.appendChild(p.cloneNode(true));
+      });
+      propertyContent.prepend(inlineIntro);
     }
 
     const slides = images.map((item, index) => {

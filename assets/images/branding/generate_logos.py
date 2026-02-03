@@ -59,6 +59,11 @@ class LogoDef:
     text_anchor: str = "start"  # "start", "middle", or "end"
     line1_y: int = 90
     line2_y: int = 170
+    # Optional circular background behind the icon (for icon-only variants).
+    circle_bg_color: str = ""   # empty = no circle
+    circle_cx: int = 0
+    circle_cy: int = 0
+    circle_r: int = 0
 
 
 # ---------------------------------------------------------------------------
@@ -72,9 +77,25 @@ def build_svg(logo: LogoDef, icon_path_d: str, icon_viewbox: str, icon_transform
     if logo.color_2:
         bg = f'\n<rect x="{vb[0]}" y="{vb[1]}" width="{vb[2]}" height="{vb[3]}" fill="{logo.color_2}"/>'
 
+    circle_bg = ""
+    if logo.circle_bg_color and logo.circle_r > 0:
+        circle_bg = (
+            f'\n<circle cx="{logo.circle_cx}" cy="{logo.circle_cy}"'
+            f' r="{logo.circle_r}" fill="{logo.circle_bg_color}"/>'
+        )
+
     anchor = ""
     if logo.text_anchor != "start":
         anchor = f' text-anchor="{logo.text_anchor}"'
+
+    line1 = ""
+    if logo.line1_text:
+        line1 = (
+            f'\n<text x="{logo.text_x}" y="{logo.line1_y}"'
+            f' font-family="{logo.font_family}" font-size="{logo.font_size}"'
+            f' font-weight="{logo.font_weight}" letter-spacing="{logo.line1_spacing}"'
+            f' fill="{logo.color_1}"{anchor}>{logo.line1_text}</text>'
+        )
 
     line2 = ""
     if logo.line2_text:
@@ -91,7 +112,7 @@ def build_svg(logo: LogoDef, icon_path_d: str, icon_viewbox: str, icon_transform
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="{logo.canvas_width}" height="{logo.canvas_height}" viewBox="{logo.canvas_viewbox}"
- preserveAspectRatio="xMidYMid meet">{bg}
+ preserveAspectRatio="xMidYMid meet">{bg}{circle_bg}
 
 <!-- Icon -->
 <svg x="{logo.icon_x}" y="{logo.icon_y}" width="{logo.icon_w}" height="{logo.icon_h}" viewBox="{icon_viewbox}" preserveAspectRatio="xMidYMid meet">
@@ -101,8 +122,7 @@ def build_svg(logo: LogoDef, icon_path_d: str, icon_viewbox: str, icon_transform
   </g>
 </svg>
 
-<!-- Text -->
-<text x="{logo.text_x}" y="{logo.line1_y}" font-family="{logo.font_family}" font-size="{logo.font_size}" font-weight="{logo.font_weight}" letter-spacing="{logo.line1_spacing}" fill="{logo.color_1}"{anchor}>{logo.line1_text}</text>{line2}
+<!-- Text -->{line1}{line2}
 </svg>
 """
 
@@ -181,6 +201,46 @@ def logo_4(name: str, color_1: str, color_2: str = "") -> LogoDef:
     )
 
 
+def icon_2(name: str, color_1: str, color_2: str = "") -> LogoDef:
+    """Create an Icon_2 variant: icon only (no text), configurable fg/bg colors."""
+    return LogoDef(
+        name=name,
+        color_1=color_1,
+        color_2=color_2,
+        line1_text="",
+        line2_text="",
+        canvas_width=256,
+        canvas_height=256,
+        canvas_viewbox="0 0 256 256",
+        icon_x=28,
+        icon_y=28,
+        icon_w=200,
+        icon_h=200,
+    )
+
+
+def icon_3(name: str, color_1: str, circle_color: str, color_2: str = "") -> LogoDef:
+    """Create an Icon_3 variant: icon only over a predefined circular background."""
+    return LogoDef(
+        name=name,
+        color_1=color_1,
+        color_2=color_2,
+        line1_text="",
+        line2_text="",
+        canvas_width=256,
+        canvas_height=256,
+        canvas_viewbox="0 0 256 256",
+        icon_x=40,
+        icon_y=40,
+        icon_w=176,
+        icon_h=176,
+        circle_bg_color=circle_color,
+        circle_cx=128,
+        circle_cy=128,
+        circle_r=108,
+    )
+
+
 LOGOS = [
     # Logo_1: two-line layout
     LogoDef(name="Logo_1-Black", color_1="#000000"),
@@ -205,6 +265,18 @@ LOGOS = [
     logo_4("Logo_4-Gray", color_1="#5c5c5c"),
     logo_4("Logo_4-Black_on_White", color_1="#000000", color_2="#ffffff"),
     logo_4("Logo_4-Gray_on_White", color_1="#5c5c5c", color_2="#ffffff"),
+
+    # Icon_2: icon-only, no text (fg/bg color variants)
+    icon_2("Icon_2-Black", color_1="#000000"),
+    icon_2("Icon_2-Gray", color_1="#5c5c5c"),
+    icon_2("Icon_2-Black_on_White", color_1="#000000", color_2="#ffffff"),
+    icon_2("Icon_2-Gray_on_White", color_1="#5c5c5c", color_2="#ffffff"),
+
+    # Icon_3: icon-only over a predefined circular background
+    icon_3("Icon_3-Black_on_WhiteCircle", color_1="#000000", circle_color="#ffffff"),
+    icon_3("Icon_3-Gray_on_WhiteCircle", color_1="#5c5c5c", circle_color="#ffffff"),
+    icon_3("Icon_3-White_on_GrayCircle", color_1="#ffffff", circle_color="#5c5c5c"),
+    icon_3("Icon_3-White_on_BlackCircle", color_1="#ffffff", circle_color="#000000"),
 ]
 
 

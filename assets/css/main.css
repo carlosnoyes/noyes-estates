@@ -274,6 +274,10 @@ a:hover { text-decoration: underline; }
   margin-top: 0.35rem;
 }
 
+.property-intro-overlay--mobile {
+  display: none;
+}
+
 .hero-slideshow--overlay .hero-slideshow-hint {
   top: 0.75rem;
   bottom: auto;
@@ -496,6 +500,15 @@ a:hover { text-decoration: underline; }
   .hero { grid-template-columns: 1fr; }
   .properties-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-hero-overlay {
+    position: static;
+    max-width: none;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background: rgba(12, 12, 12, 0.82);
+  }
   .property-hero--split {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -506,12 +519,39 @@ a:hover { text-decoration: underline; }
     border-right: 0;
     border-top: 1px solid var(--line);
   }
+  .hero-slideshow .property-intro-overlay {
+    display: none;
+  }
+  .property-intro-overlay--mobile {
+    display: block;
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    background: rgba(12, 12, 12, 0.82);
+    pointer-events: auto;
+  }
   .about-layout {
     grid-template-columns: 1fr;
   }
   .about-hero-banner {
     width: 100%;
     height: clamp(360px, 56svh, 560px);
+  }
+  .about-hero-overlay {
+    position: static;
+    max-width: none;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background: rgba(12, 12, 12, 0.82);
   }
 }
 
@@ -524,14 +564,5 @@ a:hover { text-decoration: underline; }
   }
   .about-layout {
     gap: 0.75rem;
-  }
-  .about-hero-overlay {
-    position: static;
-    max-width: none;
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-    background: rgba(12, 12, 12, 0.82);
   }
 }

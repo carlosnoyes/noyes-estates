@@ -70,6 +70,13 @@
     const images = await discoverImagesFromDirectory();
     if (images.length === 0) return;
 
+    const introOverlay = slideshowEl.querySelector(".property-intro-overlay");
+    if (introOverlay && !document.querySelector(".property-intro-overlay--mobile")) {
+      const mobileOverlay = introOverlay.cloneNode(true);
+      mobileOverlay.classList.add("property-intro-overlay--mobile");
+      slideshowEl.insertAdjacentElement("afterend", mobileOverlay);
+    }
+
     const slides = images.map((item, index) => {
       const slide = document.createElement("img");
       slide.className = "hero-slide" + (index === 0 ? " is-active" : "");

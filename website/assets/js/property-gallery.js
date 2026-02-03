@@ -2,15 +2,9 @@
   const slideshowEl = document.querySelector("[data-hero-slideshow]");
   const pageMain = document.querySelector("[data-property-code]");
   const propertyCode = pageMain?.getAttribute("data-property-code");
-  const sourceImages = Array.from(document.querySelectorAll("[data-property-image]"));
   const lightbox = document.getElementById("property-lightbox");
 
   if (!slideshowEl || !lightbox) return;
-
-  const hiddenImages = sourceImages.map((img) => ({
-    src: img.getAttribute("src"),
-    alt: img.getAttribute("alt") || "Property photo",
-  }));
 
   const imageExists = (src) =>
     new Promise((resolve) => {
@@ -73,8 +67,7 @@
   };
 
   const init = async () => {
-    let images = await discoverImagesFromDirectory();
-    if (images.length === 0) images = hiddenImages;
+    const images = await discoverImagesFromDirectory();
     if (images.length === 0) return;
 
     const slides = images.map((item, index) => {

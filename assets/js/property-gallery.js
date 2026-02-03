@@ -17,7 +17,7 @@
   const discoverImagesFromDirectory = async () => {
     if (!propertyCode) return [];
 
-    const baseDir = `../../assets/images/properties/${propertyCode}/`;
+    const baseDir = `/assets/images/properties/${propertyCode}/`;
     const exts = ["jpg", "jpeg", "png", "webp", "avif"];
     const found = [];
     const seen = new Set();
